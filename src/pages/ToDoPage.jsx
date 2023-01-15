@@ -15,10 +15,15 @@ export default function ToDo() {
     const removeTask = (idToRemove) => {
         setTasks((prevTasks) => prevTasks.filter((element) => element.id !== idToRemove))
     }
+
+    const checkTask = (idToCheck) => {
+        setTasks((prevTasks) => prevTasks.map((element) => element.id === idToCheck ? { ...element, isChecked: !element.isChecked } : element))
+    }
+
     return (
         <div>
             <TaskInput addNewTask={addNewTask} />
-            <TaskList taskList={tasks} removeTask={removeTask} />
+            <TaskList taskList={tasks} removeTask={removeTask} checkTask={checkTask} />
         </div>
     )
 }
