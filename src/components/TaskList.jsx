@@ -1,14 +1,15 @@
+import "./TaskList.css"
 export default function TaskList(props) {
 
     const { taskList, removeTask, checkTask } = props
 
     return (
-        <div>
+        <div className="container">
             {taskList.map((element) => (
-                <div key={element.id}>
+                <div key={element.id} className="taskBox">
+                    <input className="taskCheckbox" type="checkbox" checked={element.isChecked} onChange={(event) => { checkTask(element.id) }} />
                     {element.text}
-                    <input type="checkbox" checked={element.isChecked} onChange={(event) => { checkTask(element.id) }} />
-                    <button type="button" onClick={() => { removeTask(element.id) }}>-</button>
+                    <button className="taskButton" type="button" onClick={() => { removeTask(element.id) }}>-</button>
                 </div>
             ))}
         </div>

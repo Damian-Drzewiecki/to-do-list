@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import "./TaskInput.css"
 
 export default function TaskInput(props) {
     const [inputValue, setInputValue] = useState('')
@@ -6,12 +7,13 @@ export default function TaskInput(props) {
     const onClick = () => {
         addNewTask(inputValue)
         setInputValue("")
+
     }
 
     return (
-        <div>
-            <input type="text" value={inputValue} placeholder="new task..." onChange={(event) => setInputValue(event.target.value)}></input>
-            <button disabled={inputValue === ""} onClick={onClick}> Add</button>
+        <div className="taskInputBox">
+            <input className="taskInput" type="text" value={inputValue} placeholder="Type your task..." onChange={(event) => setInputValue(event.target.value)}></input>
+            <button className="buttonAddTask" disabled={inputValue === ""} onClick={onClick}>+</button>
         </div >
     )
 }

@@ -1,0 +1,30 @@
+.filterButtonsBox {
+    display: flex;
+    justify-content: center;
+}
+
+.filterButtonAll {
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 15px 0px 0px 0px;
+    width: 200px;
+    height: 50px;
+}
+
+.filterButtonCompleted {
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    width: 200px;
+    height: 50px;
+}
+
+.filterButtonUncompleted {
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 0px 15px 0px 0px;
+    width: 200px;
+    height: 50px;
+}

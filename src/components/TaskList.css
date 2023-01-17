@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.taskBox {
+    font-size: 18px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 600px;
+    height: 40px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.taskCheckbox {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-right: 10px;
+    appearance: none;
+    border: 1px solid #696969;
+    border-radius: 100%;
+}
+
+.taskCheckbox:checked::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #996fc9;
+    border-radius: 100%;
+    margin: 4px;
+}
+
+.taskButton {
+    font-size: 18px;
+    color: #696969;
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+}

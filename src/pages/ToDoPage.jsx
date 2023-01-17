@@ -1,13 +1,20 @@
 import { useState, useEffect, useCallback } from "react";
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
+import "./ToDoPage.css"
 
 const FILTER_TYPE = { ALL: "all", COMPLETED: "Completed", UNCOMPLETED: "Uncompleted" }
 
 export default function ToDo() {
     const [id, setId] = useState(0)
     const [filteredTasks, setFilteredTasks] = useState([])
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([
+        { id: 99, text: "umyć psa", isChecked: false },
+        { id: 98, text: "kupić ziemniaki", isChecked: false },
+        { id: 97, text: "siaba daba", isChecked: false },
+        { id: 96, text: "uczala pumpa", isChecked: false },
+        { id: 95, text: "kalaki klanki", isChecked: false }
+    ])
     const [filterState, setFilterState] = useState(FILTER_TYPE.ALL)
 
     useEffect(() => {
@@ -35,15 +42,16 @@ export default function ToDo() {
         setTasks((prevTasks) => prevTasks.map((element) => element.id === idToCheck ? { ...element, isChecked: !element.isChecked } : element))
     }, [])
 
+    console.log(tasks)
     return (
-        <div>
-            <div>
-                <button type="button" onClick={() => { setFilterState(FILTER_TYPE.ALL) }}>All</button>
-                <button type="button" onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Completed</button>
-                <button type="button" onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>Uncompleted</button>
+        <>
+            <div className="filterButtonsBox">
+                <button className="filterButtonAll" type="button" onClick={() => { setFilterState(FILTER_TYPE.ALL) }}>All</button>
+                <button className="filterButtonCompleted" type="button" onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Completed</button>
+                <button className="filterButtonUncompleted" type="button" onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>Uncompleted</button>
             </div>
             <TaskInput addNewTask={addNewTask} />
             <TaskList taskList={filteredTasks} removeTask={removeTask} checkTask={checkTask} />
-        </div>
+        </>
     )
 }

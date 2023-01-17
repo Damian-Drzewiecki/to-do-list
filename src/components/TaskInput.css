@@ -1,0 +1,35 @@
+.taskInputBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid;
+    border-color: #f0f0f0;
+}
+
+.taskInput {
+    color: #696969;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border: 0px solid;
+    width: 484px;
+    height: 38px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.taskInput::placeholder {
+    opacity: 0.5;
+}
+
+.buttonAddTask {
+    font-size: 18px;
+    color: #696969;
+    border-radius: 100%;
+    margin-right: 25px;
+    margin-left: auto;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
