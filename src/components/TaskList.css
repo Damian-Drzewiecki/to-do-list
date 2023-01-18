@@ -4,7 +4,13 @@
     flex-direction: column;
 }
 
+.taskBoxLine {
+    text-decoration: line-through;
+    color: #c6c6c6;
+}
+
 .taskBox {
+    cursor: pointer;
     font-size: 18px;
     display: flex;
     justify-content: left;
@@ -13,9 +19,15 @@
     height: 40px;
     background-color: white;
     margin-bottom: 20px;
+    transition-duration: 0.4s;
+}
+
+.taskBox:hover {
+    color: rgb(49, 49, 49);
 }
 
 .taskCheckbox {
+    cursor: pointer;
     width: 25px;
     height: 25px;
     margin-top: 3px;
@@ -28,19 +40,36 @@
 .taskCheckbox:checked::before {
     content: "";
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     background-color: #996fc9;
     border-radius: 100%;
-    margin: 4px;
+    margin: 5px;
 }
 
 .taskButton {
-    font-size: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("minus_grey.png");
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
     color: #696969;
     border: none;
     border-radius: 100%;
     width: 40px;
     height: 40px;
     margin-left: auto;
+    transition-duration: 0.4s;
+}
+
+.taskButton:hover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("minus_white.png");
+    background-color: #996fc9;
+    color: white;
 }

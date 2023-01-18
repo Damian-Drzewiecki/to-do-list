@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import "./TaskList.css"
 export default function TaskList(props) {
 
@@ -6,10 +7,10 @@ export default function TaskList(props) {
     return (
         <div className="container">
             {taskList.map((element) => (
-                <div key={element.id} className="taskBox">
+                <div key={element.id} className={classNames('taskBox', { taskBoxLine: element.isChecked })}>
                     <input className="taskCheckbox" type="checkbox" checked={element.isChecked} onChange={(event) => { checkTask(element.id) }} />
                     {element.text}
-                    <button className="taskButton" type="button" onClick={() => { removeTask(element.id) }}>-</button>
+                    <button className="taskButton" type="button" onClick={() => { removeTask(element.id) }}></button>
                 </div>
             ))}
         </div>
