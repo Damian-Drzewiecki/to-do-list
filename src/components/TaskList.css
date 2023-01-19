@@ -1,7 +1,13 @@
 .container {
+    max-height: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .taskBoxLine {
@@ -72,4 +78,13 @@
     background-image: url("minus_white.png");
     background-color: #996fc9;
     color: white;
+}
+
+.jobsDone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c6c6c6;
+    width: 100px;
+    height: 60px;
 }
