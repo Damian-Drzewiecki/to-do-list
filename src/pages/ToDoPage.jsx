@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useState, useEffect, useCallback } from "react";
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
@@ -44,11 +45,27 @@ export default function ToDo() {
 
     console.log(tasks)
     return (
+
         <>
             <div className="filterButtonsBox">
-                <button className="filterButtonAll" type="button" onClick={() => { setFilterState(FILTER_TYPE.ALL) }}>All</button>
-                <button className="filterButtonCompleted" type="button" onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Completed</button>
-                <button className="filterButtonUncompleted" type="button" onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>Uncompleted</button>
+                <button
+                    className={classNames("filterButtonAll", { currentFilterButton: filterState === FILTER_TYPE.ALL })}
+                    type="button"
+                    onClick={() => { setFilterState(FILTER_TYPE.ALL) }}>All
+                </button>
+
+                <button
+                    className={classNames("filterButtonCompleted", { currentFilterButton: filterState === FILTER_TYPE.COMPLETED })}
+                    type="button"
+                    onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Completed
+                </button>
+
+                <button
+                    className={classNames("filterButtonUncompleted", { currentFilterButton: filterState === FILTER_TYPE.UNCOMPLETED })}
+                    type="button"
+                    onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>Uncompleted
+                </button>
+
             </div>
             <TaskInput addNewTask={addNewTask} />
             <TaskList taskList={filteredTasks} removeTask={removeTask} checkTask={checkTask} />
