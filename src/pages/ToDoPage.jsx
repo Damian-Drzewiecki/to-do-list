@@ -10,11 +10,11 @@ export default function ToDo() {
     const [id, setId] = useState(0)
     const [filteredTasks, setFilteredTasks] = useState([])
     const [tasks, setTasks] = useState([
-        { id: 99, text: "umyć psa", isChecked: false },
-        { id: 98, text: "kupić ziemniaki", isChecked: true },
-        { id: 97, text: "siaba daba", isChecked: true },
-        { id: 96, text: "uczala pumpa", isChecked: false },
-        { id: 95, text: "kalaki klanki", isChecked: false }
+        { id: 99, text: "wash dog", isChecked: false },
+        { id: 98, text: "buy potatoes", isChecked: true },
+        { id: 97, text: "clean my room", isChecked: true },
+        { id: 96, text: "go to gym", isChecked: false },
+        { id: 95, text: "do my homework", isChecked: false }
     ])
     const [filterState, setFilterState] = useState(FILTER_TYPE.ALL)
 
