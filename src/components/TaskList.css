@@ -16,6 +16,7 @@
 }
 
 .taskBox {
+    flex-shrink: 0;
     cursor: pointer;
     font-size: 18px;
     display: flex;
