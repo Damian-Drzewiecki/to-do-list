@@ -22,7 +22,7 @@
     justify-content: left;
     align-items: center;
     width: 600px;
-    height: 40px;
+    min-height: 40px;
     background-color: white;
     margin-bottom: 20px;
     transition-duration: 0.4s;
@@ -87,4 +87,9 @@
     color: #c6c6c6;
     width: 100px;
     height: 60px;
+}
+
+.taskText {
+    width: calc(100% - 90px);
+    overflow-wrap: break-word;
 }

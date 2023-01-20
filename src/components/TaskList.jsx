@@ -12,7 +12,7 @@ export default function TaskList(props) {
             {taskList.map((element) => (
                 <div key={element.id} className={classNames('taskBox', { taskBoxLine: element.isChecked })} onClick={(event) => { onCheck(element.id, event) }}>
                     <input className="taskCheckbox" type="checkbox" checked={element.isChecked} readOnly />
-                    {element.text}
+                    <div className="taskText">{element.text}</div>
                     <button className="taskButton" type="button" onClick={() => { removeTask(element.id) }}></button>
                 </div>
             ))}
