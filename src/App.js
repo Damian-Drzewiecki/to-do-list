@@ -3,9 +3,15 @@ import ToDoPage from './pages/ToDoPage';
 
 function App() {
   return (
-    <div className="App">
-      <ToDoPage />
-    </div>
+    <>
+      <div className='logo'>
+        Tasks list
+      </div>
+
+      <div className="App">
+        <ToDoPage />
+      </div>
+    </>
   );
 }
 

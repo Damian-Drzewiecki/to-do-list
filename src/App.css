@@ -3,8 +3,18 @@
   width: 650px;
   background-color: white;
   border-radius: 10px;
-  margin-top: 15%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.logo {
+  color: white;
+  text-shadow: 2px 2px 5px #696969;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 80px;
+  margin-top: 5%
 }
