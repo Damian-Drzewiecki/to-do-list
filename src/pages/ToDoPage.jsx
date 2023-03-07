@@ -57,13 +57,13 @@ export default function ToDo() {
                 <button
                     className={classNames("filterButtonCompleted", { currentFilterButton: filterState === FILTER_TYPE.COMPLETED })}
                     type="button"
-                    onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Completed
+                    onClick={() => { setFilterState(FILTER_TYPE.COMPLETED) }}>Done
                 </button>
 
                 <button
                     className={classNames("filterButtonUncompleted", { currentFilterButton: filterState === FILTER_TYPE.UNCOMPLETED })}
                     type="button"
-                    onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>Uncompleted
+                    onClick={() => { setFilterState(FILTER_TYPE.UNCOMPLETED) }}>To do
                 </button>
 
             </div>
