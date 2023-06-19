@@ -6,11 +6,13 @@ import './ToDoPage.css';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const FILTER_TYPE = { ALL: 'all', COMPLETED: 'Completed', UNCOMPLETED: 'Uncompleted' };
+const DATA = 'data';
+const ID = 'id';
 
 export default function ToDo() {
-  const [id, setId] = useState(0);
+  const [id, setId] = useLocalStorage(ID, 0);
   const [filteredTasks, setFilteredTasks] = useState([]);
-  const [tasks, setTasks] = useLocalStorage();
+  const [tasks, setTasks] = useLocalStorage(DATA, []);
   const [filterState, setFilterState] = useState(FILTER_TYPE.ALL);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function ToDo() {
   const addNewTask = useCallback((userInputText) => {
     setTasks((prevTasks) => [...prevTasks, { id, text: userInputText, isChecked: false }]);
     setId((prevId) => prevId + 1);
-  }, [setTasks, id]);
+  }, [setTasks, id, setId]);
 
   const removeTask = useCallback((idToRemove) => {
     setTasks((prevTasks) => prevTasks.filter((element) => element.id !== idToRemove));
