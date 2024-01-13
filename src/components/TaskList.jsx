@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import './TaskList.css';
 
 export default function TaskList(props) {
-  const { taskList, removeTask, checkTask } = props;
+  const { taskList = [], removeTask, checkTask } = props;
   const onCheck = (elementId, event) => {
     checkTask(elementId);
   };
